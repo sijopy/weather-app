@@ -1,0 +1,13 @@
+<div>
+    <label>City Name:</label>
+    <input type="text" [(ngModel)]="city">
+    <button (onclick)=" getWeather">Get weather</button>
+  </div>
+  <div *ngIf="weatherData else na">
+    <p>Temperature: {{weatherData.main.temp}}</p>
+    <p>Weather Description: {{weatherData.weather[0].description}}</p>
+  </div>
+  <ng-template #na>
+    not found
+  </ng-template>
+  
